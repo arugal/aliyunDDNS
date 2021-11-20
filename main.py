@@ -15,10 +15,6 @@ import platform
 
 settings = {}
 
-proxies = {
-    "http": None,
-    "https": None,
-}
 
 def read_json_settings():
     global settings
@@ -73,7 +69,9 @@ def get_domain_name_list():
 
 
 def get_ip_addr():
-    ip = requests.get("http://ip.42.pl/raw", proxies=proxies)
+    session = requests.Session()
+    session.trust_env = False
+    ip = session.get("http://ip.42.pl/raw")
     return ip.text
 
 
@@ -92,6 +90,7 @@ def run():
         except Exception as e:
             print(e)
         time.sleep(settings["sleep_time"])
-        
+
+
 if __name__ == '__main__':
     run()
