@@ -10,7 +10,7 @@
 
 ## 配置文件
 ***
-* <h3>修改配置文件</h3>
+
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 打开settings.json文件，并编辑内容
 ```json
@@ -20,8 +20,7 @@
     "accessSecret": "",
     "domain_name": "",
     "secondary_domain": "",
-    "sleep_time": 10,
-    "networkTestAddr": "www.baidu.com"
+    "sleep_time": 10
     }
 ```
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -37,6 +36,7 @@ sleep_time 为解析记录刷新时间，为避免接口滥用，请不要设置
 networkTestAddr 用于测试网络是否连通 随便找个稳定的网站用于测试就行了<br>
 
 ## 运行
+***
 
 `docker run -v <your settings.json path>:/app/settings.json ghcr.io/arugal/aliyunddns/app:latest`
 
