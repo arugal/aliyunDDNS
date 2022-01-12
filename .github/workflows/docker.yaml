@@ -20,5 +20,5 @@ jobs:
           password: ${{ secrets.GITHUB_TOKEN }}
       - name: Push to GitHub Packages
         run: |
-          docker build -t ghcr.io/arugal/aliyunddns/app:latest .
-          docker push ghcr.io/arugal/aliyunddns/app:latest
+          docker build -t ghcr.io/arugal/aliyunddns/app:${{ github.sha }} .
+          docker push ghcr.io/arugal/aliyunddns/app:${{ github.sha }}
